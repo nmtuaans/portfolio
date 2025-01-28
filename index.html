@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<!-- <link rel="stylesheet" href="style.css"> -->
-	<link rel="shortcut icon" type="image" href="img/cursor.png">
+	<link rel="shortcut icon" type="image" href="img/profile.jpg">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -46,8 +46,8 @@ div.cursor img
 	position: absolute;
 	top: 1vw;
 	left: 1vw;
-	width: 2vw;
-	height: 2vw;
+	width: 30px;
+	height: 30px;
 	z-index: 100;
 	pointer-events: none;
 	transform: translate(-50%, -50%);
@@ -55,7 +55,10 @@ div.cursor img
 
 .logo:hover
 {
-	color:#0D0D0D;
+	color: #F2F2F2;
+  filter: none;
+  	-webkit-filter: grayscale(0);
+  	-webkit-transform: scale(1.01);
 }
 
 .logo
@@ -68,13 +71,20 @@ div.cursor img
 	font-size: 5vw;
 	font-weight: 700;
 	align-self: center;
+	text-align: left;
+	justify-self: left;
 	color: #F5CC00;
 	text-decoration: none;
 	position: relative;
-
 }
 
-.logo:before {  
+.logo img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.logo:before {
   transform: scaleX(0);
   transform-origin: bottom right;
 }
@@ -91,8 +101,8 @@ div.cursor img
   top: 0; right: 0; bottom: 0; left: 0;
   inset: 0 0 0 0;
   background: #F5CC00;
-  z-index: -1;
   transition: transform .3s ease;
+  mix-blend-mode: difference;
 }
 
 .about
@@ -105,7 +115,7 @@ div.cursor img
 	align-self: center;
 	font-family: 'M PLUS 1 Code', monospace;
 	font-size: 1.8vw;
-	color:#F2F2F2;
+	color: #F2F2F2;
 	text-decoration: none;
 }
 
@@ -138,40 +148,42 @@ div.cursor img
 }
 
 span {
-  position: relative;
-  display: block;
-  cursor: pointer;
+	position: relative;
+	display: block;
+	cursor: pointer;
 }
 
 span:before, span:after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  top: 50%;
-  margin-top: -0.5px;
-  background: #F5CC00;
+	content: '';
+	position: absolute;
+	width: 0%;
+	height: 4px;
+	top: 50%;
+	margin-top: -0.5px;
+	background: #F5CC00;
+	mix-blend-mode: difference;
 }
 
 span:before {
-  left: -2px;
+	left: -2px;
 }
+
 span:after {
-  right: 2px;
-  background: #F5CC00;
-  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+	right: 2px;
+	background: #F5CC00;
+	transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 span:hover:before {
-  background: #F5CC00;
-  width: 100%;
-  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+	background: #F5CC00;
+	width: 100%;
+	transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 span:hover:after {
-  background: transparent;
-  width: 100%;
-  transition: 0s;
+	background: transparent;
+	width: 100%;
+	transition: 0s;
 }
 
 .profile
@@ -182,37 +194,51 @@ span:hover:after {
 	grid-row-end: 18;
 	place-self: center;
 	filter: gray;
-    -webkit-filter: grayscale(1);
+  	-webkit-filter: grayscale(1);
     -webkit-transition: all .4s ease-in-out;
+  mix-blend-mode: difference;
 }
 
 .profile:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    -webkit-transform: scale(1.01);
+  filter: none;
+  	-webkit-filter: grayscale(0);
+  	-webkit-transform: scale(1.01);
 }
 
-.photo>img 
-{
-	border-radius: 1vw;
-	box-shadow: 5px 5px 15px #F5CC00;
+.photo>img {
 	object-fit: cover;
 	width: 100%;
-	max-width: 100%;
-	position: relative;
 	z-index: 40;
+	border-radius: 1vw;
+	box-shadow: 5px 5px 15px #F5CC00;
 }
 
-.em
+.photo {
+	position: relative;
+}
+
+.gif {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.gif:hover {
+	opacity: 1;
+}
+
+.tuan
 {
 	text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 	grid-column-start: 1;
 	grid-column-end: 7;
 	grid-row-start: 4;
 	grid-row-end: 8;
-	font-family: 'Inter', sans-serif;
-	font-size: 14vw;
-	font-weight: 700;
+	font-family: 'Libre Baskerville', serif;
+	font-style: italic; 
+	font-size: 12vw;
+	font-weight: 400;
 	color: #D9D9D9;
 	margin-right: 0.75vw;
 	z-index: 40;
@@ -221,7 +247,7 @@ span:hover:after {
 	text-align: end;
 }
 
-.tee
+.em
 {
 	text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 	grid-column-start: 14;
@@ -239,7 +265,7 @@ span:hover:after {
 	align-self: center;
 }
 
- @media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px) {
 
   .logo {
     font-size: 8vw;
@@ -261,17 +287,17 @@ span:hover:after {
     font-size: 2.8vw;
   }
 
-  .em {
-    font-size: 20vw;
-		grid-column-start: 3;
+  .tuan {
+    font-size: 16vw;
+		grid-column-start: 1;
 		grid-column-end: 10;
 		grid-row-start: 5;
 		grid-row-end: 8;
   }
 
-  .tee {
-    font-size: 20vw;
-		grid-column-start: 11;
+  .em {
+    font-size: 18vw;
+		grid-column-start: 12;
 		grid-column-end: 20;
 		grid-row-start: 12;
 		grid-row-end: 15;
@@ -283,7 +309,8 @@ span:hover:after {
 		grid-row-start: 3;
 		grid-row-end: 18;
   }
- }
+
+}
 
 @media screen and (max-width: 800px) {
 
@@ -304,21 +331,21 @@ span:hover:after {
   }
 
   .contact {
-    font-size: 3.8vw;
+		font-size: 3.8vw;
   }
 
-  .em {
-    font-size: 22vw;
-		grid-column-start: 4;
-		grid-column-end: 12;
-		grid-row-start: 5;
+  .tuan {
+    font-size: 18vw;
+		grid-column-start: 1;
+		grid-column-end: 13;
+		grid-row-start: 6;
 		grid-row-end: 8;
   }
 
-  .tee {
-    font-size: 22vw;
-		grid-column-start: 8;
-		grid-column-end: 19;
+  .em {
+    font-size: 20vw;
+		grid-column-start: 9;
+		grid-column-end: 20;
 		grid-row-start: 12;
 		grid-row-end: 15;
   }
@@ -326,43 +353,44 @@ span:hover:after {
   .profile {
 		grid-column-start: 5;
 		grid-column-end: 16;
-		grid-row-start: 3;
-		grid-row-end: 18;
+		grid-row-start: 1;
+		grid-row-end: 20;
   }
+
 }
 
-  @media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
 
   .logo {
-    font-size: 14vw;
+    font-size: 11vw;
   	grid-column-start: 1;
-		grid-column-end: 6;
+		grid-column-end: 5;
 		grid-row-start: 1;
 		grid-row-end: 3;
   }
 
   .works {
-    font-size: 5.8vw;
+    font-size: 5vw;
   }
 
   .about {
-    font-size: 5.8vw;
+    font-size: 5vw;
   }
 
   .contact {
-    font-size: 5.8vw;
+    font-size: 5vw;
   }
 
-  .em {
-    font-size: 26vw;
-		grid-column-start: 4;
-		grid-column-end: 11;
-		grid-row-start: 5;
+  .tuan {
+    font-size: 22vw;
+		grid-column-start: 1;
+		grid-column-end: 13;
+		grid-row-start: 6;
 		grid-row-end: 8;
   }
 
-  .tee {
-    font-size: 26vw;
+  .em {
+    font-size: 24vw;
 		grid-column-start: 9;
 		grid-column-end: 20;
 		grid-row-start: 12;
@@ -375,6 +403,7 @@ span:hover:after {
 		grid-row-start: 3;
 		grid-row-end: 18;
   }
+ 
  }
 
 	</style>
@@ -386,9 +415,9 @@ span:hover:after {
 <body>
 	<div class="grid">
 
-		<a href="index.html" class="logo">m<b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">ʇ</b>.</a>
+		<a href="index.html" class="logo"><img src="img/logo.png"></a>
 		
-		<a href="work_00.html" class="works">
+		<a href="122024.html" class="works">
 			<span>WORKS<span>
 		</a>
 		
@@ -401,15 +430,16 @@ span:hover:after {
 		</a>
 		
 		<div class="profile">
-			<a href="about.html">
+			<a href="122024.html">
 			<div class="photo">
-			<img src="img/profile.jpg">
+  			<img src="img/profile.jpg">
+  			<img class="gif" src="img/profile.gif">
 			</div>
 			</a>
 		</div>
 
-		<div class="em">e<b style="color: #F5CC00; mix-blend-mode:difference;">m</b></b></div>
-		<div class="tee"><b style="color: #F5CC00; font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">ʇ</b>ee<b style="color: #F5CC00;">.</b></div>
+		<div class="tuan"><b style="color: #F5CC00; font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">ʇ</b>uan</div>
+		<div class="em">e<b style="color: #F5CC00;">m.</b></div>
 
 	</div>
 
