@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<!-- <link rel="stylesheet" href="style.css"> -->
+	<link rel="shortcut icon" type="image" href="img/profile.jpg">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+	
+body
+{
+	margin: 0;
+	background-image: url('img/bg.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #0D0D0D;
+	z-index: -50;
+}
+
+.grid
+{
+	z-index: 1;
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(19, 1fr);
+	padding: 2vw;
+	box-sizing: border-box;
+	gap: 1vw;
+	grid-template-rows: repeat(19, 1fr);
+}
+
+div.cursor img
+{
+	mix-blend-mode: difference;
+	position: absolute;
+	top: 1vw;
+	left: 1vw;
+	width: 30px;
+	height: 30px;
+	z-index: 100;
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+}
+
+.logo:hover
+{
+	color:#F2F2F2;
+}
+
+.logo
+{
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	font-family: 'Inter', sans-serif;
+	font-size: 5vw;
+	font-weight: 700;
+	align-self: center;
+	text-align: left;
+	justify-self: left;
+	color: #F5CC00;
+	text-decoration: none;
+	position: relative;
+}
+
+.logo img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.logo:before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.logo:hover:before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.logo:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: #F5CC00;
+  transition: transform .3s ease;
+  mix-blend-mode: difference;
+}
+
+.about
+{
+	grid-column-end: 20;
+	grid-column-start: 18;
+	grid-row-start: 18;
+	grid-row-end: 20;
+	justify-self: end;
+	align-self: center;
+	font-family: 'M PLUS 1 Code', monospace;
+	font-size: 1.8vw;
+	color: #F2F2F2;
+	text-decoration: none;
+}
+
+.contact
+{
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 18;
+	grid-row-end: 20;
+	font-family: 'M PLUS 1 Code', monospace;
+	font-size: 1.8vw;
+	justify-self: start;
+	align-self: center;
+	color: #F2F2F2;
+	text-decoration: none;
+}
+
+.works
+{
+	grid-column-end: 20;
+	grid-column-start: 18;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	font-family: 'M PLUS 1 Code', monospace;
+	font-size: 1.8vw;
+	justify-self: end;
+	align-self: center;
+	color: #F5CC00;
+	text-decoration: none;
+}
+
+span {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+span:before, span:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #F5CC00;
+  mix-blend-mode: difference;
+}
+
+span:before {
+  left: -2px;
+}
+span:after {
+  right: 2px;
+  background: #F5CC00;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+span:hover:before {
+  background: #F5CC00;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+span:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}
+
+.box {
+	grid-column-start: 3;
+	grid-column-end: 18;
+	grid-row-start: 2;
+	grid-row-end: 19;
+  background-color: #0D0D0D;
+  opacity: 0.8;
+  border-radius: 1vw;
+	box-shadow: 5px 5px 15px #F2F2F2;
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	z-index: -30;
+	mix-blend-mode: difference;
+}
+
+.bio {
+	color: #F2F2F2;
+	font-family: 'M PLUS 1 Code', monospace;
+	font-size: 1.6vw;
+	font-weight: 400;
+	grid-column-start: 4;
+	grid-column-end: 17;
+	grid-row-start: 3;
+	grid-row-end: 14;
+	margin-left:-2vw;
+	justify-self: start;
+	align-self: start;
+	text-align: justify;
+}
+
+.bio a {
+	font-family: 'Inter', sans-serif;
+	font-weight: 700;
+	color: #F2C500;
+	text-decoration: none;
+}
+
+.bio img {
+}
+
+.bio a>img {
+	height: 1.6vw;
+}
+
+.bio a:hover {
+	filter: invert(1);
+}
+
+@media screen and (max-width: 1100px) {
+
+	.logo {
+		font-size: 8vw;
+		grid-column-start: 1;
+		grid-column-end: 4;
+		grid-row-start: 1;
+		grid-row-end: 3;
+	}
+
+	.works {
+		font-size: 2.8vw;
+	}
+
+	.about {
+		font-size: 2.8vw;
+	}
+
+	.contact {
+		font-size: 2.8vw;
+	}
+
+	.box {
+		grid-column-start: 4;
+		grid-column-end: 17;
+	}
+
+	.bio {
+		grid-column-start: 5;
+		grid-column-end: 16;
+		font-size: 2vw;
+	}
+
+	.bio a>img {
+	height: 2vw;
+	}
+
+}
+
+@media screen and (max-width: 800px) {
+
+	.logo {
+		font-size: 11vw;
+		grid-column-start: 1;
+		grid-column-end: 5;
+		grid-row-start: 1;
+		grid-row-end: 3;
+	}
+
+	.works {
+		font-size: 3.8vw;
+	}
+
+	.about {
+		font-size: 3.8vw;
+	}
+
+	.contact {
+		font-size: 3.8vw;
+	}
+
+	.box {
+		grid-column-start: 2;
+		grid-column-end: 19;
+		grid-row-start: 3;
+		grid-row-end: 18;
+	}
+
+	.bio {
+		font-size: 2.6vw;
+		grid-column-start: 3;
+		grid-column-end: 18;
+		grid-row-start: 4;
+		grid-row-end: 17;
+	}
+
+	.bio a>img {
+	height: 2.6vw;
+	}
+
+}
+
+@media screen and (max-width: 500px) {
+
+	.logo {
+		font-size: 11vw;
+		grid-column-start: 1;
+		grid-column-end: 5;
+		grid-row-start: 1;
+		grid-row-end: 3;
+	}
+
+	.works {
+		font-size: 5vw;
+	}
+
+	.about {
+		font-size: 5vw;
+	}
+
+	.contact {
+		font-size: 5vw;
+	}
+
+	.bio {
+		font-size: 3.4vw;
+	}
+
+	.bio a>img {
+	height: 3.4vw;
+	}
+}
+
+	</style>
+
+	<title>WORKS</title>
+
+</head>
+
+<body>
+
+	<div class="grid">
+		
+		<a href="index.html" class="logo"><img src="img/logo.png"></a>
+		
+		<a href="works.html" class="works">
+			<span>WORKS<span>
+		</a>
+		
+		<a href="about.html" class="about">
+			<span>ABOUT<span>
+		</a>
+		
+		<a href="contact.html" class="contact">
+			<span>CONTACT<span>
+		</a>
+
+
+		<div class="box"></div>
+			
+		<div class="bio">
+			The works are arranged chronologically as a look back at Tuan's past efforts. Tuan is eager to fill the board with more exciting projects. ☝️🤓<br><br> 
+			><b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">2024</b><br>
+			<a href="122024.html"><b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">Tr</b>ần <b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">Th</b>ế <img src="pic/tranthe.png"></a> (Album Trailer), <a href="102024.html"><b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">V</b>1Z10N <img src="pic/v1z10n.png"></a> (Event), <a href="062024.html"><b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">Sorry, we</b>|RE CLOSED <img src="pic/sorrywereclosed.png"></a> (Web Photography), <a href="052024.html"><b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">P</b>oor <b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">Th</b>oughts <img src="pic/poorthoughts.png"></a> (Short Film), <a href="012024.html"><b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">T</b>um<b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">T</b>ail <img src="pic/tumtail.png"></a> (Mobile App).<br><br>
+			><b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">2023</b><br>
+			<a href="122023B.html"><b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">Gãy</b> Số 17 <img src="pic/gayso17.png"></a> (Event), <a href="122023A.html"><b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">Stu</b>RDY <img src="pic/sturdy.png"></a> (LMS), <a href="112023.html"><b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">Vin</b>A/V <img src="pic/vinav.png"></a> (Event), <a href="092023.html"><b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">Vin</b>authorised <img src="pic/vinauthorised.png"></a> (AV), <a href="052023.html"><b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">Pi</b>zza <b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">C</b>ốt—<b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">L</b>ết <img src="pic/pizzacotlet.png"></a> (VJ), <a href="042023.html"><b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">Egg</b>ffoc The Barber <img src="pic/eggffoc.png"></a> (3D Character Design), <a href="012023.html"><b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">D</b>emon <b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">I</b>n <b style="font-family:'Libre Baskerville', serif; font-style: italic; font-weight: 400;">H</b>eavenland <img src="pic/demoninheavenland.png"></a> (2D Runner Game).
+
+	</div>
+
+	<div class="cursor">
+		<img src="img/cursor.png">
+	</div>
+
+</body>
+
+</html>
+
+<script type="text/javascript" src="cursor.js"></script>
