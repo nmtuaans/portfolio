@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -234,22 +234,22 @@ h1 {
 	grid-row-end: 20;
 	justify-self: center;
 	align-self: center;
-	filter: gray;
-    -webkit-filter: grayscale(1);
-    -webkit-transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
 }
 
 .image:hover {
-    filter: none;
-      -webkit-filter: grayscale(0);
-      -webkit-transform: scale(1.01);
+  	-webkit-transform: scale(1.01);
 }
 
 .photo>img {
-	box-shadow: 5px 5px 10px #F5CC00;
 	border-radius: 1vw;
 	object-fit: cover;
 	width: 100%;
+	box-shadow: 5px 5px 10px #F2F2F2;
+}
+
+.photo>img:hover {
+	box-shadow: 5px 5px 10px #F5CC00;
 }
 
 .photo {
@@ -349,6 +349,7 @@ h1 {
 		width: 7vw;
 		font-size: 2.4vw;
 	}
+
 }
 
 @media screen and (max-width: 800px) {
@@ -391,6 +392,18 @@ h1 {
 		font-size: 3.4vw;
 	}
 
+	.photo>img {
+		box-shadow: 5px 5px 10px #F5CC00;
+	}
+
+	.bw {
+		opacity: 0;
+	}
+
+	.credits {
+		opacity: 1;
+	}
+
 }
 
 @media screen and (max-width: 500px) {
@@ -424,6 +437,7 @@ h1 {
 		align-self: end;
 		justify-self: start;
 		text-align: start;
+		font-kerning: auto;
   }
 
   .text {
@@ -506,7 +520,7 @@ h1 {
 		<div class="image">
 			<a href="https://www.youtube.com/watch?v=_CjSSm4x0Xw" target="_blank">
 			<div class="photo">
-				<img src="img/tensadventure.png">
+				<img class="bw" src="img/tensadventure.png">
 				<img class="credits" src="img/tensadventure_title.png">
 			</div>
 			</a>

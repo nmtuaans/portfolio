@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -234,22 +234,22 @@ h1 {
 	grid-row-end: 20;
 	justify-self: center;
 	align-self: center;
-	filter: gray;
-    -webkit-filter: grayscale(1);
-    -webkit-transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
 }
 
 .image:hover {
-    filter: none;
-      -webkit-filter: grayscale(0);
-      -webkit-transform: scale(1.01);
+  	-webkit-transform: scale(1.01);
 }
 
 .photo>img {
-	box-shadow: 5px 5px 10px #F5CC00;
 	border-radius: 1vw;
 	object-fit: cover;
 	width: 100%;
+	box-shadow: 5px 5px 10px #F2F2F2;
+}
+
+.photo>img:hover {
+	box-shadow: 5px 5px 10px #F5CC00;
 }
 
 .photo {
@@ -349,6 +349,7 @@ h1 {
 		width: 7vw;
 		font-size: 2.4vw;
 	}
+
 }
 
 @media screen and (max-width: 800px) {
@@ -391,6 +392,18 @@ h1 {
 		font-size: 3.4vw;
 	}
 
+	.photo>img {
+		box-shadow: 5px 5px 10px #F5CC00;
+	}
+
+	.bw {
+		opacity: 0;
+	}
+
+	.credits {
+		opacity: 1;
+	}
+
 }
 
 @media screen and (max-width: 500px) {
@@ -424,6 +437,7 @@ h1 {
 		align-self: end;
 		justify-self: start;
 		text-align: start;
+		font-kerning: auto;
   }
 
   .text {
@@ -500,14 +514,14 @@ h1 {
 
 		<div class="text">
 			<b style="color: #0D0D0D; background: #F5CC00;">2023. Nhung Cai Goc. Audio Visual. Visual Artist.</b><br><br>
-			<a href="https://www.youtube.com/watch?v=qhwiDBhR7X8" target="_blank">Vinauthorised</a> is a 30-minute A/V set made by <a href="https://www.instagram.com/nhungcaigoc/" target="_blank">Nhung Cai Goc</a> & <a href="https://www.instagram.com/ph00000ng/" target="_blank">PH00000NG</a> for an event called <a href="https://www.instagram.com/p/CzjRJZQqUNX/" target="_blank">VinA/V</a>, organised by <a href="https://www.instagram.com/rmitvnscd/" target="_blank">RMIT SCD Vietnam</a> & <a href="https://v2x.vn/" target="_blank">V2X Academy</a>. We as a team collaborated with DJ PH00000NG telling unauthorised events/actions/incidents in Vietnam. Inspired by the <a href="https://vtv.vn/truyen-hinh-truc-tuyen/vtv1/thoi-su-0.htm" target="_blank">Thoi Su 19h</a>, we arranged the set to have a format similar to a news program on TV.
+			<a href="https://www.youtube.com/watch?v=qhwiDBhR7X8" target="_blank">Vinauthorised</a> is a 30-minute A/V set made by <a href="https://www.instagram.com/nhungcaigoc/" target="_blank">Nhung Cai Goc</a> & <a href="https://www.instagram.com/ph00000ng/" target="_blank">PH00000NG</a> for an event called <a href="https://www.instagram.com/p/CzjRJZQqUNX/" target="_blank">VinA/V</a>, organised by <a href="https://www.instagram.com/rmitvnscd/" target="_blank">RMIT SCD Vietnam</a> & <a href="https://v2x.vn/" target="_blank">V2X Academy</a>. We as a team collaborated with DJ PH00000NG telling unauthorised events, actions, incidents in Vietnam. Inspired by the <a href="https://vtv.vn/truyen-hinh-truc-tuyen/vtv1/thoi-su-0.htm" target="_blank">Thoi Su 19h</a>, we arranged the set to have a format similar to a news program on TV.
 
 		</div>
 		
 		<div class="image">
 			<a href="https://www.behance.net/gallery/218522883/092023" target="_blank">
 			<div class="photo">
-				<img src="img/vinauthorised.png">
+				<img class="bw" src="img/vinauthorised.png">
 				<img class="credits" src="img/vinauthorised_title.png">
 			</div>
 			</a>
