@@ -234,22 +234,22 @@ h1 {
 	grid-row-end: 20;
 	justify-self: center;
 	align-self: center;
-	filter: gray;
-    -webkit-filter: grayscale(1);
-    -webkit-transition: all .4s ease-in-out;
+		-webkit-transition: all .4s ease-in-out;
 }
 
 .image:hover {
-    filter: none;
-      -webkit-filter: grayscale(0);
-      -webkit-transform: scale(1.01);
+  	-webkit-transform: scale(1.01);
 }
 
 .photo>img {
-	box-shadow: 5px 5px 10px #F5CC00;
 	border-radius: 1vw;
 	object-fit: cover;
 	width: 100%;
+	box-shadow: 5px 5px 10px #F2F2F2;
+}
+
+.photo>img:hover {
+	box-shadow: 5px 5px 10px #F5CC00;
 }
 
 .photo {
@@ -349,6 +349,7 @@ h1 {
 		width: 7vw;
 		font-size: 2.4vw;
 	}
+
 }
 
 @media screen and (max-width: 800px) {
@@ -389,6 +390,18 @@ h1 {
 	.next {
 		width: 10vw;
 		font-size: 3.4vw;
+	}
+
+	.photo>img {
+		box-shadow: 5px 5px 10px #F5CC00;
+	}
+
+	.bw {
+		opacity: 0;
+	}
+
+	.credits {
+		opacity: 1;
 	}
 
 }
@@ -507,8 +520,8 @@ h1 {
 		<div class="image">
 			<a href="https://www.behance.net/gallery/217690801/122024" target="_blank">
 			<div class="photo">
-				<img src="img/tranthe.png">
 				<img class="credits" src="img/tranthe_title.png">
+				<img class="bw"src="img/tranthe.png">
 			</div>
 			</a>
 		</div>
